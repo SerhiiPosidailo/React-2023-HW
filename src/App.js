@@ -1,9 +1,10 @@
 import React from 'react';
+import {RickAndMortyapi} from "./components/RickAndMortyapi";
 
 const App = () => {
     return (
         <div>
-                App
+                <RickAndMortyapi/>
         </div>
     );
 };
