@@ -1,0 +1,17 @@
+.Post {
+    margin: 10px;
+    border: 1px solid blue;
+    width: calc(20% - 22px);
+    box-shadow: 5px 5px 5px yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.Button {
+    width: 40%;
+    border-radius: 30px;
+}
+
