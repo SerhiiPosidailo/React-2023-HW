@@ -4,7 +4,7 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 
 import {carValidator} from "../../validators/carValidator";
-import {carService} from "../../service/carServise";
+import {carService} from "../../service/carService";
 
 const CarForm = ({setTrigger, carForUpdate, setCarForUpdate}) => {
 
