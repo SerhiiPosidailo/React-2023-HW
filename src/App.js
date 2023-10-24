@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {UsersContainer} from "./Components/userComponents/UsersContainer";
-import {CommentContainer} from "./Components/CommentsComponents/CommentContainer";
+import {UsersContainer} from "./components/userComponents/UsersContainer";
+import {CommentContainer} from "./components/CommentsComponents/CommentContainer";
 
 const App = () => {
     return (

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {userService} from "../../Service/userAxiosService";
+import {userService} from "../../service/userAxiosService";
 import {Users} from "./Users";
 import {UserForms} from "./UserForms";
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 
-import {commentsService} from "../../Service/commentsAxiosService";
+import {commentsService} from "../../service/commentsAxiosService";
 import {CommentForm} from "./CommentForm";
 import {Comments} from "./Comments";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 
-import {userService} from "../../Service/userAxiosService";
+import {userService} from "../../service/userAxiosService";
 
 
 

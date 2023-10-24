@@ -1,7 +1,7 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 
-import {commentsService} from "../../Service/commentsAxiosService";
+import {commentsService} from "../../service/commentsAxiosService";
 
 
 const CommentForm = ({setComments}) => {
