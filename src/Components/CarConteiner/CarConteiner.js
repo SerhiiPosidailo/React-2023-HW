@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-import {carServise} from "../../service/carServise";
+
 import {CarForm} from "./CarForm";
 import {Cars} from "./Cars";
+import {carService} from "../../service/carServise";
 
 
 const CarConteiner = () => {
@@ -12,7 +13,7 @@ const CarConteiner = () => {
     const [carForUpdate, setCarForUpdate] = useState(null)
 
     useEffect(() => {
-        carServise.getAll().then(({data})=>setCars(data))
+        carService.getAll().then(({data})=>setCars(data))
     }, [trigger]);
 
 

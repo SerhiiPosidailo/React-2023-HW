@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 
-import {carServise} from "../../service/carServise";
+
 import {carValidator} from "../../validators/carValidator";
+import {carService} from "../../service/carServise";
 
 const CarForm = ({setTrigger, carForUpdate, setCarForUpdate}) => {
 
@@ -21,13 +22,13 @@ const CarForm = ({setTrigger, carForUpdate, setCarForUpdate}) => {
     }, [carForUpdate]);
 
     const save = async (car)=>{
-        await carServise.create(car);
+        await carService.create(car);
         setTrigger(prev => !prev)
         reset()
     }
 
     const update = async (car) => {
-        await carServise.updateById(carForUpdate.id, car)
+        await carService.updateById(carForUpdate.id, car)
         setTrigger(prev => !prev)
         reset()
         setCarForUpdate(null)
