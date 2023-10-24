@@ -1,5 +1,5 @@
 import {axiosService} from "./axiosService";
-import {urls} from "../constants/urls";
+import {urls} from "../Constants/urls";
 
 const commentsService = {
     getAllComent :()=> axiosService.get(urls.comment),
