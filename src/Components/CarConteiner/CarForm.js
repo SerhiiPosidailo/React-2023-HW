@@ -27,7 +27,7 @@ const CarForm = ({setTrigger, carForUpdate, setCarForUpdate}) => {
     }
 
     const update = async (car) => {
-        await carServise.updataById(carForUpdate.id, car)
+        await carServise.updateById(carForUpdate.id, car)
         setTrigger(prev => !prev)
         reset()
         setCarForUpdate(null)
