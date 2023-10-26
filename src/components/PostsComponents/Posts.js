@@ -4,18 +4,19 @@ import {postsService} from "../../service/postsSrvice";
 import {Post} from "./Post";
 
 
+
 const Posts = ({postsId}) => {
 
     const [posts, setPosts] = useState([])
-    console.log(posts)
+
 
     useEffect(() => {
-        postsService.getByPostId(postsId).then(({data}) => setPosts([data]))
+        postsService.getByPostId(postsId).then(({data}) => setPosts(data))
     }, [postsId]);
 
     return (
         <div>
-            {posts && posts.map(post =><Post key={post.id} post={post}/>)}
+            {posts && <Post posts={posts}/>}
         </div>
     );
 };
