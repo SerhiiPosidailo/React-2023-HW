@@ -1,0 +1,14 @@
+.Home {
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+    background-color: #0124fc;
+
+}
+
+.Home a{
+    text-decoration: none;
+    margin-left: 20px;
+    color: #f8f402;
+    font-size: 25px;
+}
