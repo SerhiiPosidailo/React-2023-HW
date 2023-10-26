@@ -7,7 +7,7 @@ import {Post} from "./Post";
 
 const Posts = ({postsId}) => {
 
-    const [posts, setPosts] = useState([])
+    const [post, setPosts] = useState([])
 
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const Posts = ({postsId}) => {
 
     return (
         <div>
-            {posts && <Post posts={posts}/>}
+            {post && <Post post={post}/>}
         </div>
     );
 };
