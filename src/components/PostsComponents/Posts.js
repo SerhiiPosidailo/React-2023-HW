@@ -7,7 +7,7 @@ import {Post} from "./Post";
 
 const Posts = ({postsId}) => {
 
-    const [post, setPosts] = useState([])
+    const [post, setPosts] = useState(null)
 
 
     useEffect(() => {
