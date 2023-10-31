@@ -1,9 +1,9 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const PostsDetails = ({postDetails}) => {
 
-    const {title, body} = postDetails
-    const {id} = useParams();
+    const {id ,title, body} = postDetails
+
 
     const navigate = useNavigate();
 
