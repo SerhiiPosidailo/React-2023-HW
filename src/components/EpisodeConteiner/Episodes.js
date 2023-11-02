@@ -1,8 +1,9 @@
+import {useSearchParams} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
+
 import css from "./Episodes.module.css"
 import css1 from "./Button.module.css"
 import {episodeService} from "../../service/episodeService";
-import {useSearchParams} from "react-router-dom";
 import {Episode} from "./Episode";
 
 
@@ -14,13 +15,14 @@ const Episodes = () => {
     const [query, setQuery] = useSearchParams({page: '1'});
     const [prevNext, setPrevNext] = useState({prev: null, next: null})
 
+    const pageQuery = query.get('page')
 
     useEffect(() => {
-        episodeService.getAll(query.get('page')).then(({data}) => {
+        episodeService.getAll(pageQuery).then(({data}) => {
             setEpisodes(data.results)
             setPrevNext({prev: data.info.prev, next: data.info.next})
         })
-    }, [query.get('page')]);
+    }, [pageQuery, query]);
 
 
     const prev = () => {

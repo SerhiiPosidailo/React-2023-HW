@@ -3,3 +3,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.Button button{
+    width: 6vw;
+    margin: 10px 0;
+    border-radius: 25px;
+}

@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+
+import {characterService} from "../../service/characterService";
 
 
-const Character = ({character}) => {
+const Character = ({character:item}) => {
+    const [character, setCharacter] = useState(null)
 
-    const {id, name, status,image} = character;
+
+    useEffect(() => {
+        characterService.getCharacters(item).then(({data})=> setCharacter(data))
+    }, [item]);
+
+
     return (
         <div>
-
-            <div>id: {id}</div>
-            <div>name: {name}</div>
-            <div>status: {status}</div>
-            <img src={image} alt={name}/>
+            {character && <div>id: {character.id}</div>}
+            {character && <div>name: {character.name}</div>}
+            {character && <img src={character.image} alt={character.name}/>}
         </div>
     );
 };
