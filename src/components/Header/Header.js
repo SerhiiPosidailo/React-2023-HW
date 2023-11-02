@@ -1,11 +1,14 @@
 import React from 'react';
 
 import css from "./Header.module.css"
+import {useAppContext} from "../../hooks/ussAppContext";
 
 const Header = () => {
+    const {episodeName} = useAppContext();
+
     return (
         <div className={css.Header}>
-            Rick & Morty
+            <div>{episodeName ? `${episodeName}` : `Rick & Morty`}</div>
         </div>
     );
 };
