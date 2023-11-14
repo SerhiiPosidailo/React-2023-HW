@@ -12,12 +12,12 @@ import {carActions} from "../../redux";
 const CarContainer = () => {
 
     const dispatch = useDispatch()
-    const {cars, flag} = useSelector(state => state.cars)
+    const {flag} = useSelector(state => state.cars)
 
 
     useEffect(() => {
         carService.getAll().then(({data})=> dispatch(carActions.setResponse(data)))
-    }, [cars, flag, dispatch]);
+    }, [flag, dispatch]);
 
 
     return (
