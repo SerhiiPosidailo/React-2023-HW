@@ -1,5 +1,6 @@
 import React from 'react';
-import {CarContainer} from "../../components/CarConteiner/CarContainer";
+
+import {CarContainer} from "../../components";
 
 const CarPage = () => {
     return (

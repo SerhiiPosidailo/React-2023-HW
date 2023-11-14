@@ -1,30 +1,31 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-
-const initialState = {
-    cars: []
+let initialState = {
+    cars:[],
+    carForUpdate: null,
+    flag: false
 }
 
-let carSlice = createSlice({
-    name: 'carSlice',
+const carSlice = createSlice({
+    name : 'carSlice',
     initialState,
-    reducers: {
-        setResponse: (state = initialState, action) => {
-            state.cars =  action.payload;
+    reducers:{
+        setResponse:(state, action) => {
+            state.cars = action.payload
         },
-        saveCar:(state, action) => {
-            state.cars += action.payload
+        setUpdate: (state, action) => {
+            state.carForUpdate = action.payload
+        },
+        setFlag: (state, action) => {
+            state.flag = action.payload
         }
     }
 })
 
-const {reducer: carReducer, actions} = carSlice;
+const {reducer:carReducer, actions} = carSlice;
 
 const carActions = {
     ...actions
 }
 
-export {
-    carReducer,
-    carActions
-}
+export {carReducer, carActions}

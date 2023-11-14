@@ -1,23 +1,26 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
-import {carValidator} from "../../validators/carValidator";
 import {useDispatch, useSelector} from "react-redux";
-import {carActions} from "../../redux/slices/carSlice";
+
+
+import {carValidator} from "../../validators";
+import {carService} from "../../service";
+import {carActions} from "../../redux";
+
+
+
 
 const CarForm = () => {
+
+    const {carForUpdate, flag} = useSelector(state => state.cars);
+    const dispatch = useDispatch();
 
     const {register,reset, handleSubmit,formState:{errors,isValid}, setValue} = useForm({
         mode:"all",
         resolver:joiResolver(carValidator)
     });
 
-    const dispatch = useDispatch();
-    const {carForUpdate} = useSelector(state => state.cars);
-
-    const trigger = () => {
-        dispatch(prev => !prev)
-    }
 
     useEffect(() => {
         if (carForUpdate) {
@@ -27,15 +30,16 @@ const CarForm = () => {
         }
     }, [carForUpdate, setValue]);
 
-    const save = async (car)=>{
-        await dispatch(carActions.saveCar(car));
-        trigger()
+    const save = async (car) => {
+        await carService.create(car)
+        dispatch(carActions.setFlag(!flag))
         reset()
     }
 
     const update = async (car) => {
-        await dispatch(carActions.setResponse(carForUpdate.id, car ))
-        trigger()
+        await carService.updataById(carForUpdate.id, car)
+        dispatch(carActions.setFlag(!flag))
+        dispatch(carActions.setUpdate(null))
         reset()
     }
 

@@ -1,14 +1,22 @@
-import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {carActions} from "../../redux/slices/carSlice";
+
+import {carService} from "../../service";
+import {carActions} from "../../redux";
+
+
 
 const Car = ({car}) => {
 
     const {id, brand, price, year} = car;
 
     const dispatch = useDispatch();
+    const {flag} = useSelector(state => state.cars)
 
 
+    const carDel = async (carId) => {
+        await carService.delete(carId)
+        dispatch(carActions.setFlag(!flag))
+    }
 
     return (
         <div>
@@ -16,8 +24,8 @@ const Car = ({car}) => {
             <div>brand: {brand}</div>
             <div>price: {price}</div>
             <div>year: {year}</div>
-            <button onClick={()=>dispatch(carActions.setResponse(car))}>update</button>
-            <button onClick={()=>dispatch(carActions.setResponse(id))}>delete</button>
+            <button onClick={()=>dispatch(carActions.setUpdate(car))}>update</button>
+            <button onClick={()=>carDel(id)}>delete</button>
         </div>
     );
 };
