@@ -1,0 +1,10 @@
+.Episode{
+    width: calc(25% - 2px);
+    border: 1px solid black;
+    text-align: center;
+}
+
+.Episode a{
+    text-decoration: none;
+    color: black;
+}
