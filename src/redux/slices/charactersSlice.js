@@ -26,6 +26,9 @@ const charactersSlice = createSlice({
         .addCase(getById.fulfilled, (state, action) => {
             state.characters = action.payload
         })
+        .addCase(getById.rejected, (state, action) => {
+            state.error = action.payload
+        })
 })
 
 const {reducer: charactersReducer, actions} = charactersSlice;

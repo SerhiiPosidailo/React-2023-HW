@@ -39,6 +39,9 @@ const episodesSlice = createSlice({
                 state.nextPage = next
                 state.episodes = results
             })
+        .addCase(getAll.rejected, (state, action)=>{
+            state.error = action.payload
+        })
 });
 
 const {reducer: episodesReducer, actions} = episodesSlice;
